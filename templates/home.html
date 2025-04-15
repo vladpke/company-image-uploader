@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Select Company</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🏢 Select a Company</h1>
+        <form method="GET" action="/upload">
+            <button name="company" value="Simple Move" class="btn-simple">Simple Move</button>
+            <button name="company" value="Page Relocation" class="btn-page">Page Relocation</button>
+            <button name="company" value="Baxter Moving" class="btn-baxter">Baxter Moving</button>
+        </form>
+    </div>
+</body>
+
+</html>

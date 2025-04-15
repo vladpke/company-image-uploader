@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Images</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        window.ALLOWED_EXTENSIONS = "{{ allowed_extensions }}".split(",");
+    </script>
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body class="themed-body" style="--theme-color: {{ theme_color }};">
+    <div class="container">
+        <h1>📤 Upload Files for <span class="company">{{ company }}</span></h1>
+
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+            <input type="hidden" name="company" value="{{ company }}">
+
+            <p><strong>Select image type:</strong></p>
+            <div class="radio-group">
+                <input type="radio" id="graphic" name="image_type" value="graphic">
+                <label for="graphic">Graphic</label>
+
+                <input type="radio" id="template" name="image_type" value="graphic template">
+                <label for="template">Graphic Template</label>
+
+                <input type="radio" id="photo" name="image_type" value="photo">
+                <label for="photo">Photo</label>
+            </div>
+
+            <div class="file-input">
+                <p><strong>Select file(s):</strong></p>
+
+                <!-- hidden real input -->
+                <input type="file" name="files" id="files" multiple disabled accept="{{ allowed_extensions }}" required>
+
+                <p class="file-note">
+                    Only {{ allowed_extensions.replace(',', ', ').upper() }} files are allowed.
+                </p>
+
+                <!-- styled fake button -->
+                <label for="files" id="file-label" class="file-label">Choose Files</label>
+
+                <!-- show file names here -->
+                <span id="file-names" class="file-names">No files selected</span>
+                <p id="file-error" class="file-error" style="display: none;"></p>
+            </div>
+
+            <button type="submit" id="upload-btn" disabled>Upload</button>
+        </form>
+        <form action="{{ url_for('home') }}" method="get" class="home-form">
+            <button type="submit" class="home-button">🏠 Home</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

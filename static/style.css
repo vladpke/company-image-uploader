@@ -1,0 +1,217 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f6f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 2em;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+input[type="password"] {
+    width: 80%;
+    padding: 0.6em;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin-top: 1em;
+    font-size: 1em;
+}
+
+button {
+    margin-top: 1em;
+    padding: 0.6em 1.5em;
+    background: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* button:hover {
+    background: #5a54e2;
+} */
+
+.error {
+    color: red;
+    margin-top: 1em;
+}
+
+/* --- Fancy, color-themable radio buttons --- */
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+label {
+    display: inline-block;
+    padding: 0.5em 1.2em;
+    margin: 0.4em 0.4em 0;
+    border-radius: 20px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+input[type="radio"]:checked+label {
+    background-color: var(--theme-color, #6c63ff);
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Themed Colors --- */
+.themed-body {
+    background-color: var(--theme-color);
+}
+
+/* Match buttons to theme */
+.themed-body button {
+    background-color: var(--theme-color);
+    color: #333;
+    border: none;
+    font-weight: bold;
+    padding: 0.6em 1.4em;
+    border-radius: 12px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: all 0.3s ease;
+}
+
+.themed-body button:hover {
+    filter: brightness(0.95);
+}
+
+/* Optional: contrast text on darker themes */
+.themed-body button:disabled {
+    background-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
+}
+
+
+/* --- Company-themed buttons on home page --- */
+.btn-simple {
+    background-color: #ffdee9;
+    color: #333;
+}
+
+.btn-page {
+    background-color: #d0f4de;
+    color: #333;
+}
+
+.btn-baxter {
+    background-color: #d0e0f4;
+    color: #333;
+}
+
+/* Hover & shared styles */
+.btn-simple,
+.btn-page,
+.btn-baxter {
+    border: none;
+    padding: 0.6em 1.4em;
+    border-radius: 12px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0.5em;
+    transition: filter 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-simple:hover,
+.btn-page:hover,
+.btn-baxter:hover {
+    filter: brightness(0.95);
+}
+
+/* --- Cute File Input Styling --- */
+.file-input {
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+.file-label {
+    display: inline-block;
+    background-color: var(--theme-color, #6c63ff);
+    color: #333;
+    padding: 0.5em 1.4em;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+.file-label:hover {
+    filter: brightness(0.95);
+}
+
+input[type="file"] {
+    display: none;
+    /* hide the real file input */
+}
+
+.file-names {
+    display: block;
+    margin-top: 0.4em;
+    font-size: 0.9em;
+    color: #555;
+    word-break: break-word;
+}
+
+.file-note {
+    font-size: 0.85em;
+    color: #555;
+    margin-top: 0.5em;
+}
+
+.file-error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 0.4em;
+    font-weight: bold;
+}
+
+/* --- Home Button Styling --- */
+.home-button {
+    background-color: white;
+    color: #333;
+    border: 2px solid var(--theme-color, #6c63ff);
+    padding: 0.4em 1em;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.95em;
+    margin-top: 1em;
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: var(--theme-color, #6c63ff);
+    color: white;
+}
+
+.home-form {
+    margin-top: 4em;
+}
+
+.file-label.disabled {
+    background-color: #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+    pointer-events: none;
+}

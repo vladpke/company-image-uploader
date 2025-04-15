@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Passphrase</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔐 Welcome</h1>
+        <p>Please enter the secret passphrase to continue.</p>
+        <form method="POST">
+            <input type="password" name="passphrase" placeholder="Enter passphrase..." required>
+            <button type="submit">Unlock</button>
+        </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>

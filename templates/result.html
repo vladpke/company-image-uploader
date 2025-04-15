@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="themed-body" style="--theme-color: {{ theme_color }};">
+  <div class="container">
+    {% if success %}
+    <h1>✅ Success!</h1>
+    <p>{{ image_type.title() }} image files were successfully uploaded for {{ company }}.</p>
+    {% else %}
+    <h1>❌ Upload Failed</h1>
+    <p>An error occurred while uploading. {{ error }}</p>
+    {% endif %}
+
+    <form action="/upload" method="get">
+      <input type="hidden" name="company" value="{{ company }}">
+      <button type="submit">Upload more for same company</button>
+    </form>
+
+    <form action="/home" method="get">
+      <button type="submit">Upload for a different company</button>
+    </form>
+  </div>
+</body>
+
+</html>
