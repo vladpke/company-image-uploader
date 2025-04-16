@@ -282,3 +282,8 @@ input[type="file"] {
     max-width: 100%;
     box-sizing: border-box;
 }
+
+#upload-loading {
+	font-style: italic;
+	color: #555;
+}

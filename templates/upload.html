@@ -55,7 +55,10 @@
                 <p id="file-error" class="file-error" style="display: none;"></p>
             </div>
 
-            <button type="submit" id="upload-btn" disabled>Upload</button>
+            <button type="submit" id="upload-btn" disabled>
+                <span id="upload-text">Upload</span>
+                <span id="upload-loading" style="display: none;">Uploading…</span>
+            </button>
         </form>
         <form action="{{ url_for('home') }}" method="get" class="home-form">
             <button type="submit" class="home-button">🏠 Home</button>
