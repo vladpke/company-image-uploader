@@ -8,6 +8,10 @@ body {
     margin: 0;
 }
 
+.result-message {
+    line-height: 1.6;
+}
+
 .container {
     background: white;
     padding: 2em;
@@ -278,12 +282,13 @@ input[type="file"] {
 }
 
 .full-width-btn {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+	width: 100%;
+	max-width: 90%;
+	box-sizing: border-box;
+	margin: 0 auto;
 }
 
 #upload-loading {
-	font-style: italic;
-	color: #555;
+    font-style: italic;
+    color: #555;
 }

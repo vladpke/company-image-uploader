@@ -17,13 +17,14 @@
 	<div class="container">
 		{% if success %}
 		<h1>✅ Success!</h1>
-		<p>
-			{{ image_type.title() }} image files were successfully uploaded for
-			<strong>{{ company }}</strong>.
+		<p class="result-message">
+			{{ image_type.title() }} image files were successfully uploaded for <strong>{{ company }}</strong>.
 		</p>
 		{% else %}
 		<h1>❌ Upload Failed</h1>
-		<p>An error occurred while uploading. {{ error }}</p>
+		<p class="result-message">
+			An error occurred while uploading. {{ error }}
+		</p>
 		{% endif %}
 
 		<form action="/upload" method="get" style="margin-top: 2em;">
