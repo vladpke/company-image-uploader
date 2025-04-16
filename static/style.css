@@ -272,3 +272,9 @@ input[type="file"] {
 #upload-btn {
     margin-top: 1.4em;
 }
+
+.full-width-btn {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
