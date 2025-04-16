@@ -262,6 +262,10 @@ input[type="file"] {
 }
 
 .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6em;
     margin-bottom: 2em;
 }
 
@@ -277,4 +281,4 @@ input[type="file"] {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-  }
+}
