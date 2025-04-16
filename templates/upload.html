@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Images</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script>
         window.ALLOWED_EXTENSIONS = "{{ allowed_extensions }}".split(",");
@@ -12,9 +13,9 @@
     <script defer src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 
-<body class="themed-body" style="--theme-color: {{ theme_color }};">
+<body class="themed-body upload-page" style="--theme-color: {{ theme_color }};">
     <div class="container">
-        <h1>📤 Upload Files for <span class="company">{{ company }}</span></h1>
+        <h1>📤 Upload Files for <span class="nowrap company">{{ company }}</span></h1>
 
         <form method="POST" action="/upload" enctype="multipart/form-data">
             <input type="hidden" name="company" value="{{ company }}">

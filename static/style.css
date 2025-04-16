@@ -39,9 +39,24 @@ button {
     transition: background 0.3s ease;
 }
 
-/* button:hover {
-    background: #5a54e2;
-} */
+.company {
+    background-color: var(--theme-color);
+    padding: 0.25em 0.6em;
+    border-radius: 16px;
+    font-weight: bold;
+    color: #333;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+    display: inline-block;
+    line-height: 1.4;
+    font-size: 1.05em;
+    margin-top: 0.4em;
+    font-family: 'Raleway', sans-serif;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
 
 .error {
     color: red;
@@ -140,6 +155,7 @@ input[type="radio"]:checked+label {
 /* --- Cute File Input Styling --- */
 .file-input {
     margin-top: 1.5em;
+    margin-bottom: 2em;
     text-align: center;
 }
 
@@ -239,4 +255,20 @@ input[type="file"] {
     .file-names {
         font-size: 0.8em;
     }
+}
+
+.upload-page h1 {
+    margin-bottom: 1.4em;
+}
+
+.radio-group {
+    margin-bottom: 2em;
+}
+
+.file-input {
+    margin-bottom: 0.4em;
+}
+
+#upload-btn {
+    margin-top: 1.4em;
 }
