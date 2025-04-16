@@ -2,34 +2,51 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upload Result</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- PWA: Manifest & Meta -->
+	<link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+	<meta name="theme-color" content="#f6f8ff">
+	<!--        End           -->
+	<title>Upload Result</title>
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body class="themed-body" style="--theme-color: {{ theme_color }};">
-  <div class="container">
-    {% if success %}
-    <h1>✅ Success!</h1>
-    <p>
-      {{ image_type.title() }} image files were successfully uploaded for
-      <strong>{{ company }}</strong>.
-    </p>
-    {% else %}
-    <h1>❌ Upload Failed</h1>
-    <p>An error occurred while uploading. {{ error }}</p>
-    {% endif %}
+	<div class="container">
+		{% if success %}
+		<h1>✅ Success!</h1>
+		<p>
+			{{ image_type.title() }} image files were successfully uploaded for
+			<strong>{{ company }}</strong>.
+		</p>
+		{% else %}
+		<h1>❌ Upload Failed</h1>
+		<p>An error occurred while uploading. {{ error }}</p>
+		{% endif %}
 
-    <form action="/upload" method="get" style="margin-top: 2em;">
-      <input type="hidden" name="company" value="{{ company }}">
-      <button type="submit" class="full-width-btn">Upload more for {{ company }}</button>
-    </form>
+		<form action="/upload" method="get" style="margin-top: 2em;">
+			<input type="hidden" name="company" value="{{ company }}">
+			<button type="submit" class="full-width-btn">Upload more for {{ company }}</button>
+		</form>
 
-    <form action="/home" method="get" style="margin-top: 0.2em;">
-      <button type="submit" class="full-width-btn">Upload for a different company</button>
-    </form>
-  </div>
+		<form action="/home" method="get" style="margin-top: 0.2em;">
+			<button type="submit" class="full-width-btn">Upload for a different company</button>
+		</form>
+	</div>
+
+	<script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", function () {
+				navigator.serviceWorker.register("/static/service-worker.js").then(function (registration) {
+					console.log("✅ Service Worker registered with scope:", registration.scope);
+				}).catch(function (err) {
+					console.log("❌ Service Worker registration failed:", err);
+				});
+			});
+		}
+	</script>
 </body>
 
 </html>
