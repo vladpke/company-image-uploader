@@ -171,6 +171,7 @@ input[type="file"] {
     font-size: 0.9em;
     color: #555;
     word-break: break-word;
+    text-align: center;
 }
 
 .file-note {
@@ -214,4 +215,28 @@ input[type="file"] {
     color: #aaa;
     cursor: not-allowed;
     pointer-events: none;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.2em;
+        border-radius: 12px;
+    }
+
+    .file-label,
+    .home-button,
+    button,
+    label {
+        font-size: 0.95em;
+        padding: 0.4em 1em;
+    }
+
+    .radio-group label {
+        display: block;
+        margin: 0.3em auto;
+    }
+
+    .file-names {
+        font-size: 0.8em;
+    }
 }
