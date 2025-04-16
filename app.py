@@ -22,9 +22,9 @@ COMPANY_THEMES = {
     "Baxter Moving": "#d0e0f4",  # light blue
 }
 
-ALLOWED_EXTENSIONS = set(
+ALLOWED_EXTENSIONS = [
     ext.strip() for ext in os.getenv("ALLOWED_FILE_EXTENSIONS", "").split(",")
-)
+]
 
 
 def is_allowed_file(filename):
