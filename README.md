@@ -12,7 +12,7 @@ A cute and professional Flask web app for uploading image files (JPG, PNG, AI, P
 - Frontend + backend file type validation
 - Error handling with friendly feedback
 - No history stored — perfect for team use
-- Optional Dropbox integration (just plug in your token)
+- Future Dropbox integration (just plug in your token)
 
 ---
 
@@ -38,7 +38,7 @@ A cute and professional Flask web app for uploading image files (JPG, PNG, AI, P
    SECRET_KEY=your-super-secret-key
    UPLOAD_PASSPHRASE=your-passphrase
    ALLOWED_FILE_EXTENSIONS=.png,.jpg,.jpeg,.ai,.psd,.heic
-   # DROPBOX_TOKEN=your-dropbox-token (optional)
+   # DROPBOX_TOKEN=your-dropbox-token (in the future)
    ```
 
 4. **Run the app**
