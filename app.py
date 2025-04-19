@@ -17,8 +17,8 @@ EXPECTED_PASSPHRASE = os.getenv("UPLOAD_PASSPHRASE")
 
 # Pastel theme colors per company
 COMPANY_THEMES = {
-    "Simple Move": "#ffdee9",  # light pink
-    "Page Relocation": "#d0f4de",  # light mint
+    "Page Relocation": "#ffdee9",  # light pink
+    "Simple Move": "#d0f4de",  # light mint
     "Baxter Moving": "#d0e0f4",  # light blue
 }
 
@@ -48,9 +48,15 @@ def passphrase():
 
 @app.route("/home")
 def home():
-    if not session.get("authenticated"):
-        return redirect(url_for("passphrase"))
-    return render_template("home.html")
+	if not session.get("authenticated"):
+		return redirect(url_for("passphrase"))
+
+	company_themes = {
+		company: COMPANY_THEMES.get(company, "#ffffff")
+		for company in COMPANY_THEMES
+	}
+
+	return render_template("home.html", company_themes=company_themes)
 
 
 @app.route("/upload", methods=["GET", "POST"])

@@ -43,6 +43,10 @@ button {
     transition: background 0.3s ease;
 }
 
+button:hover {
+	background: #5a54e2;
+}
+
 .company {
     background-color: var(--theme-color);
     padding: 0.25em 0.6em;
@@ -120,40 +124,21 @@ input[type="radio"]:checked+label {
 }
 
 
-/* --- Company-themed buttons on home page --- */
-.btn-simple {
-    background-color: #ffdee9;
-    color: #333;
+/* --- Company-themed buttons --- */
+.company-btn {
+	color: #333;
+	border: none;
+	padding: 0.6em 1.4em;
+	border-radius: 12px;
+	font-size: 1em;
+	cursor: pointer;
+	margin: 0.5em;
+	transition: filter 0.3s ease;
+	font-weight: bold;
 }
 
-.btn-page {
-    background-color: #d0f4de;
-    color: #333;
-}
-
-.btn-baxter {
-    background-color: #d0e0f4;
-    color: #333;
-}
-
-/* Hover & shared styles */
-.btn-simple,
-.btn-page,
-.btn-baxter {
-    border: none;
-    padding: 0.6em 1.4em;
-    border-radius: 12px;
-    font-size: 1em;
-    cursor: pointer;
-    margin: 0.5em;
-    transition: filter 0.3s ease;
-    font-weight: bold;
-}
-
-.btn-simple:hover,
-.btn-page:hover,
-.btn-baxter:hover {
-    filter: brightness(0.95);
+.company-btn:hover {
+	filter: brightness(0.95);
 }
 
 /* --- Cute File Input Styling --- */
@@ -262,7 +247,7 @@ input[type="file"] {
 }
 
 .upload-page h1 {
-    margin-bottom: 1.4em;
+    margin-bottom: 0.4em;
 }
 
 .radio-group {
@@ -291,4 +276,14 @@ input[type="file"] {
 #upload-loading {
     font-style: italic;
     color: #555;
+}
+
+.company-logo {
+	max-width: 150px;
+	height: auto;
+	margin: 0.5em 0 1.2em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+    margin-bottom: 2.6em;
 }

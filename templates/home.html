@@ -17,10 +17,16 @@
     <div class="container">
         <h1>🏢 Select a Company</h1>
         <form method="GET" action="/upload">
-            <button name="company" value="Simple Move" class="btn-simple">Simple Move</button>
-            <button name="company" value="Page Relocation" class="btn-page">Page Relocation</button>
-            <button name="company" value="Baxter Moving" class="btn-baxter">Baxter Moving</button>
+            <button name="company" value="Simple Move" style="background-color: {{ company_themes['Simple Move'] }};"
+                class="company-btn">Simple Move</button>
+            <button name="company" value="Page Relocation"
+                style="background-color: {{ company_themes['Page Relocation'] }};" class="company-btn">Page
+                Relocation</button>
+            <button name="company" value="Baxter Moving"
+                style="background-color: {{ company_themes['Baxter Moving'] }};" class="company-btn">Baxter
+                Moving</button>
         </form>
+
     </div>
 
     <script>
