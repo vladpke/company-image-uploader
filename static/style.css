@@ -258,6 +258,13 @@ input[type="file"] {
     margin-bottom: 2em;
 }
 
+/* Themed hover effect for unselected radio button labels */
+input[type="radio"]:not(:checked) + label:hover {
+	filter: brightness(0.95);
+	transform: scale(1.03);
+	transition: all 0.2s ease;
+}
+
 .file-input {
     margin-bottom: 0.4em;
 }
